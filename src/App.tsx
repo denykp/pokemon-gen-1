@@ -12,7 +12,7 @@ function App() {
   }, []);
   return (
     <>
-      <div className="app grid grid-cols-2">
+      <div className="app md:grid md:grid-cols-2">
         <div className="p-4">
           <h1 className="text-2xl font-bold mb-4">
             Pokemon Types From Generation 1

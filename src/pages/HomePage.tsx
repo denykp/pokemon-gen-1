@@ -79,11 +79,13 @@ export default function HomePage() {
                 alt={pokemon.name}
               />
             </div>
-            <span className="text-center">{pokemon.name}</span>
+            <span className="text-xs md:text-base text-center">
+              {pokemon.name}
+            </span>
           </NavLink>
         ))}
       </div>
-      <div className="flex justify-center gap-2 mt-4">
+      <div className="flex justify-center flex-wrap gap-2 mt-4">
         {Array.from({
           length: Math.ceil(filteredPokemon.length / limit),
         }).map((_, index) => (
