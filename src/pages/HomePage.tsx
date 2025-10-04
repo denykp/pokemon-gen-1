@@ -2,10 +2,10 @@ import { useEffect, useMemo, useRef, useState } from "react";
 // import api from "../libs/api";
 // import type { Pokemon } from "../types";
 import usePokemonStore from "../stores/pokemonStore";
+import { NavLink } from "react-router";
 
 export default function HomePage() {
   const { listPokemon } = usePokemonStore();
-  // const [listPokemon, setListPokemon] = useState<Pokemon[]>([]);
   const limit = 12;
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
@@ -64,19 +64,25 @@ export default function HomePage() {
           onChange={(e) => setSearchTemporary(e.target.value)}
         />
       </label>
-      <ul className="list flex flex-col gap-2 mt-4 w-full">
+      <div className="grid grid-cols-3 gap-4 mt-4">
         {displayedPokemon.map((pokemon) => (
-          <li
-            className="group list-row capitalize glass cursor-pointer transition-transform hover:scale-105 hover:!blur-none"
+          <NavLink
+            to={`/detail/${pokemon.name}`}
+            className="group capitalize glass cursor-pointer transition-transform hover:scale-105 hover:!blur-none rounded-lg"
             key={pokemon.name}
           >
-            <span>{pokemon.name}</span>
-            <span className="hidden group-hover:block float-end text-right">
-              View Detail
-            </span>
-          </li>
+            <div>
+              <img
+                src={pokemon.image}
+                loading="lazy"
+                className="w-28 mx-auto"
+                alt={pokemon.name}
+              />
+            </div>
+            <span className="text-center">{pokemon.name}</span>
+          </NavLink>
         ))}
-      </ul>
+      </div>
       <div className="flex justify-center gap-2 mt-4">
         {Array.from({
           length: Math.ceil(filteredPokemon.length / limit),

@@ -14,13 +14,6 @@ const PieChart: React.FC<PieChartProps> = ({ labels, series, type }) => {
       background: "transparent",
     },
     labels,
-    // colors: [
-    //   "#6366f1", // indigo-500
-    //   "#facc15", // yellow-400
-    //   "#f97316", // orange-500
-    //   "#10b981", // emerald-500
-    //   "#ec4899", // pink-500
-    // ],
     legend: {
       position: "bottom",
       labels: {
@@ -28,7 +21,7 @@ const PieChart: React.FC<PieChartProps> = ({ labels, series, type }) => {
       },
     },
     theme: {
-      mode: "light", // change based on DaisyUI theme if needed
+      mode: "light",
     },
   };
 

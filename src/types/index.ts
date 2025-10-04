@@ -1,11 +1,16 @@
-export interface Pokemon {
+export interface DefaultPokemonData {
   name: string;
   url: string;
 }
-
-export interface PokemonType {
+export interface Pokemon {
   name: string;
   url: string;
+  image: string;
+  types: string[];
+  abilities: string[];
+}
+
+export interface PokemonType extends DefaultPokemonData {
   count: number;
 }
 
