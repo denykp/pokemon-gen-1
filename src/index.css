@@ -16,7 +16,7 @@
   -moz-osx-font-smoothing: grayscale;
 } */
 body {
-  @apply bg-gradient-to-tr from-blue-600 to-blue-900 h-screen w-screen;
+  @apply bg-gradient-to-tr from-blue-600 to-blue-900 h-screen w-screen overflow-clip text-white;
 }
 
 #root {
